@@ -159,6 +159,6 @@ span.action {
 
 section.auth {
   width: 350px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 </style>

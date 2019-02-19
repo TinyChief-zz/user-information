@@ -1,17 +1,37 @@
 <template>
   <div class="wrapper">
+    <p class="test-showcase">Тестовый аккаунт:
+      <br>
+      Логин:  admin@admin.ru
+      <br>
+      Пароль: 121212
+    </p>
     <h1>Добро пожаловать!</h1>
     <section class="auth">
       <b-field label="Электронный адрес">
-        <b-input type="email" v-model="credentials.email" icon="email"></b-input>
+        <b-input
+          type="email"
+          v-model="credentials.email"
+          icon="email"
+          placeholder="test@example.com"
+        ></b-input>
       </b-field>
       <b-field label="Пароль">
-        <b-input type="password" v-model="credentials.password" password-reveal icon="lock"></b-input>
+        <b-input
+          type="password"
+          v-model="credentials.password"
+          password-reveal
+          icon="lock"
+          placeholder="Не менее 6 символов"
+          minlength="6"
+          maxlength="100"
+        ></b-input>
       </b-field>
     </section>
     <p v-if="error">{{ error }}</p>
     <a class="button is-primary" @click="tryLogin()">Войти</a>
-    <p>Или создайте
+    <p>
+      Или создайте
       <span class="action" @click="toRegistration()">новый аккаунт</span>
     </p>
   </div>
@@ -25,8 +45,8 @@ export default {
   data () {
     return {
       credentials: {
-        email: 'marat1@mail.ru',
-        password: '101010'
+        email: '',
+        password: ''
       },
       userData: null,
       error: null
@@ -53,6 +73,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
+.test-showcase {
+  position: absolute;
+  top: 0
+}
 label {
   text-align: left;
 }

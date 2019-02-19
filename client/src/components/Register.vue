@@ -3,22 +3,39 @@
     <h1>Регистрация</h1>
     <section class="auth">
       <b-field label="Имя">
-        <b-input v-model="credentials.firstName" icon="account"></b-input>
+        <b-input v-model="credentials.firstName" icon="account" placeholder="Иван"></b-input>
       </b-field>
       <b-field label="Фамилия">
-        <b-input v-model="credentials.lastName" icon="account"></b-input>
+        <b-input v-model="credentials.lastName" icon="account" placeholder="Иванов"></b-input>
       </b-field>
       <b-field label="Электронный адрес">
-        <b-input type="email" v-model="credentials.email" icon="email"></b-input>
+        <b-input
+          type="email"
+          v-model="credentials.email"
+          icon="email"
+          placeholder="test@example.com"
+        ></b-input>
       </b-field>
       <b-field label="Пароль">
-        <b-input type="password" v-model="credentials.password" password-reveal icon="lock"></b-input>
+        <b-input
+          type="password"
+          v-model="credentials.password"
+          password-reveal
+          icon="lock"
+          minlength="6"
+          maxlength="100"
+        ></b-input>
       </b-field>
-      <b-field label="Select a date">
-        <b-datepicker placeholder="Type or select a date..." icon="calendar-today" editable v-model="credentials.birth"></b-datepicker>
+      <b-field label="День рождения">
+        <b-datepicker
+          placeholder="Нажмите и выберите дату"
+          icon="calendar-today"
+          editable
+          v-model="credentials.birth"
+        ></b-datepicker>
       </b-field>
       <b-field label="Интересы">
-        <b-input v-model="credentials.interests" icon="soccer"></b-input>
+        <b-input v-model="credentials.interests" icon="soccer" placeholder="Укажите через запятую"></b-input>
       </b-field>
       <div class="block">
         <label for class="label">Пол</label>
@@ -42,12 +59,12 @@ export default {
   data () {
     return {
       credentials: {
-        email: 'marat1@mail.ru',
-        password: '101010',
-        lastName: 'Юлдашбаев',
-        firstName: 'Марат',
-        interests: 'Футбол, Легкая атлетика, Аниме',
-        gender: 'male',
+        email: '',
+        password: '',
+        lastName: '',
+        firstName: '',
+        interests: '',
+        gender: '',
         birth: null
       },
       userData: null,
@@ -63,7 +80,8 @@ export default {
         })
         .catch(err => {
           if (err.response.status === 400) {
-            this.error = 'Пользователь с таким электронным адресом уже зарегистрирован.'
+            this.error =
+              'Пользователь с таким электронным адресом уже зарегистрирован.'
           }
         })
     },
