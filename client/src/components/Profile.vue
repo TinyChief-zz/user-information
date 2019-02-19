@@ -37,13 +37,14 @@ h3 {
   margin: 40px 0 0;
 }
 ul {
-  min-width: 500px;
+  width: 450px;
   display: flex;
   flex-direction: column;
   list-style-type: none;
   padding: 0;
   margin-bottom: 40px;
 }
+
 li {
   display: inline-flex;
   margin: 0 10px;
@@ -54,10 +55,24 @@ li {
 }
 
 .item-field {
-  width: 40%;
+  width: 50%;
   font-weight: bold;
 }
 a {
   color: #42b983;
 }
+
+@media screen and (max-width: 500px) {
+  ul {
+    width: 90%;
+  }
+  li {
+    flex-wrap: wrap
+  }
+  .item-field {
+    width: 100%;
+    font-weight: bold;
+  }
+}
+
 </style>

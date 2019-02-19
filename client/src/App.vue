@@ -161,4 +161,9 @@ section.auth {
   width: 350px;
   margin-bottom: 20px;
 }
+@media screen and (max-width: 400px) {
+  section.auth {
+    width: 300px;
+  }
+}
 </style>
