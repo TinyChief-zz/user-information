@@ -51,7 +51,7 @@ li {
 }
 [class^="item"] {
   padding: 10px;
-  text-align: left
+  text-align: left;
 }
 
 .item-field {
@@ -67,12 +67,11 @@ a {
     width: 90%;
   }
   li {
-    flex-wrap: wrap
+    flex-wrap: wrap;
   }
   .item-field {
     width: 100%;
     font-weight: bold;
   }
 }
-
 </style>

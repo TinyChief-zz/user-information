@@ -1,10 +1,8 @@
 <template>
   <div class="wrapper">
     <p class="test-showcase">Тестовый аккаунт:
-      <br>
-      Логин:  admin@admin.ru
-      <br>
-      Пароль: 121212
+      <br>Логин: admin@admin.ru
+      <br>Пароль: 121212
     </p>
     <h1>Добро пожаловать!</h1>
     <section class="auth">
@@ -75,7 +73,7 @@ export default {
 <style>
 .test-showcase {
   position: absolute;
-  top: 0
+  top: 0;
 }
 label {
   text-align: left;
